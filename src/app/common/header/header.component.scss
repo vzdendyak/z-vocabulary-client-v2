@@ -1,0 +1,63 @@
+@import "./src/assets/scss/variables";
+
+.header-blue {
+  //background: linear-gradient(135deg, #172a74, #21a9af);
+  //background-color: #184e8e;
+
+  .navbar {
+    //background: transparent;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    //color: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background-color: $header-background;
+
+    .navbar-brand {
+      font-weight: bold;
+
+    }
+
+    .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .form-inline {
+      label {
+        color: #555;
+      }
+
+      .search-field {
+        display: inline-block;
+        width: 80%;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #bfbfbf;
+        border-radius: 0;
+        color: #ccc;
+        box-shadow: none;
+        color: inherit;
+        transition: border-bottom-color 0.3s;
+      }
+
+      .search-field:focus {
+        border-bottom: 1px solid #555;
+      }
+    }
+
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .nav-item {
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    margin-top: 5px;
+    &:hover {
+      background-color: #ceceeb;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="header-blue">
+  <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+    <div class="container-fluid">
+      <a [routerLink]="['/blocks']" class="navbar-brand ">Z-VocabularyV2</a>
+      <form class="form-inline mr-auto  d-inline d-md-none " id="search-field" target="_self">
+        <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input
+          class="form-control search-field" name="search" type="search"></div>
+      </form>
+      <button aria-controls="navcol-1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+              data-target="#nav-col-1" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav-col-1">
+        <ul class="navbar-nav mr-auto text-center">
+          <li class="nav-item">
+            <a [routerLink]="['/blocks']" class="nav-link active">Blocks</a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/list']" class="nav-link active">All words</a>
+          </li>
+        </ul>
+      </div>
+      <form class="form-inline mr-auto d-none d-md-inline" target="_self">
+        <div class="form-group"><label for="search-field2"><i class="fa fa-search"></i></label><input
+          class="form-control search-field" id="search-field2" name="search" type="search"></div>
+      </form>
+    </div>
+  </nav>
+</div>
