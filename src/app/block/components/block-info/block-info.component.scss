@@ -1,0 +1,73 @@
+@import "./src/assets/scss/variables";
+
+.container {
+  background: $container-background;
+  height: calc(100vh - 55px);
+  overflow: auto;
+  padding: 0px;
+}
+
+.words-list {
+
+}
+
+.w-list-item {
+  h3 {
+    border-radius: 5px;
+    background-color: $header-background;
+    text-align: center;
+    padding: 3px;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background: $block-1-hover;
+      cursor: pointer;
+    }
+  }
+
+
+  border: 2px solid;
+
+  border-color: #0000 #0000 #bfd1e2 #c1d1e3;
+  padding: 10px 0px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 10px;
+
+}
+
+.m-list {
+  background: $header-background;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.m-list-item {
+  span {
+    &:nth-child(1) {
+      margin-right: 5px;
+    }
+  }
+}
+
+.e-list {
+
+  padding-left: 10px;
+  border: 3px solid;
+  border-color: #0000 #0000 #0000 #ffa500;
+  margin-left: 60px;
+}
+
+.c-list {
+  padding-left: 10px;
+  border: 3px solid;
+  border-color: #0000 #0000 #0000 blue;
+  margin-left: 60px;
+}
+
+//.e-list-item {
+//  background-color: white;
+//}
+//
+//.c-list-item {
+//  background-color: greenyellow;
+//}

@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-10">
+    <i (click)="deleteMeaning()" *ngIf="deleteState" class="bi bi-trash-fill"></i>
+    <span class="mr-2">({{meaning.partOfSpeech}})</span>
+    <span class="font-weight-bold">{{meaning.text}}</span>
+  </div>
+  <div class="col-2 edit-icon-block">
+    <button (click)="switchDeleteState()">
+      <i class="bi bi-trash-fill"></i>
+    </button>
+    <button (click)="switchEditState()">
+      <i class="bi bi-pencil-fill"></i>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-1 ">
+
+  </div>
+  <div class="col-11">
+    <ul class="e-list">
+      <li *ngFor="let ex of meaning.examples" class="e-list-item">
+        <span class="font-italic">{{ex.text}}</span>
+        <i (click)="deleteExample(ex.id)" *ngIf="deleteState" class="bi bi-trash-fill"></i>
+      </li>
+      <div *ngIf="editState" class="form-group edit-form">
+        <input #addExampleInp (keyup.enter)="addExample(addExampleInp)" class="form-control w-75 d-inline"
+               placeholder="Add new example" type="text">
+      </div>
+    </ul>
+    <ul class="c-list">
+      <li *ngFor="let col of meaning.collocations" class="c-list-item">
+        <span>{{col.text}}</span>
+        <i (click)="deleteCollocation(col.id)" *ngIf="deleteState" class="bi bi-trash-fill"></i>
+      </li>
+      <div *ngIf="editState" class="form-group edit-form  ">
+        <input #addCollocationInp (keyup.enter)="addCollocation(addCollocationInp)" class="form-control w-75 d-inline"
+               placeholder="Add new collocation" type="text">
+      </div>
+    </ul>
+  </div>
+</div>

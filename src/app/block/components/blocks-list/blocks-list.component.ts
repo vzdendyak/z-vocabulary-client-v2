@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BlockApiService} from '../../services/block-api.service';
 import {BlockModel} from '../../models/block-model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-blocks-list',
@@ -10,7 +11,7 @@ import {BlockModel} from '../../models/block-model';
 export class BlocksListComponent implements OnInit {
   public data: BlockModel[];
 
-  constructor(private blockService: BlockApiService) {
+  constructor(private blockService: BlockApiService, private router: Router) {
     this.loadData();
   }
 
@@ -19,5 +20,21 @@ export class BlocksListComponent implements OnInit {
 
   async loadData() {
     this.data = await this.blockService.getBlocks().toPromise();
+  }
+
+  public async createBlock(name: string) {
+    console.log(name);
+    if (!name) {
+      return;
+    }
+    let result = await this.blockService.createBlock(name).toPromise();
+    console.log(result);
+    if (result) {
+      await this.loadData();
+    }
+  }
+
+  goToBlockDetail(id: number, name: string) {
+    this.router.navigate([`/blocks/${id}`], {queryParams: {name}});
   }
 }

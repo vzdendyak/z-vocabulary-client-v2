@@ -1,0 +1,43 @@
+<div *ngIf="blockName" class="container">
+  <button aria-controls="addBlockContainer" aria-expanded="false" data-target="#addBlockContainer"
+          data-toggle="collapse">
+    <i class="bi bi-plus-circle add-icon"></i>
+  </button>
+  <div class="form-group collapse" id="addBlockContainer">
+    <i (click)="loadData()" class="bi bi-arrow-repeat w-25 mx-2 refresh-icon"></i>
+    <input #addWordInp (keyup.enter)="createWord(addWordInp.value.trim())" class="form-control w-75 d-inline"
+           id="addBlockInput"
+           placeholder="Add new" type="text">
+  </div>
+  <h1 class="display-4 p-4">{{blockName}}</h1>
+  <ul class="w-list">
+    <li *ngFor="let w of words"  class="w-list-item">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2 word-block" [routerLink]="['/words/' + w.id]">
+            <h3>{{w.text}}</h3>
+          </div>
+          <div class="col-10">
+            <ul class="m-list">
+              <li *ngFor="let m of w.meanings" class="m-list-item">
+                <span>({{m.partOfSpeech}})</span>
+                <span class="font-weight-bold">{{m.text}}</span>
+                <ul class="e-list">
+                  <li *ngFor="let ex of m.examples" class="e-list-item">
+                    <span class="font-italic">{{ex.text}}</span>
+                  </li>
+                </ul>
+                <ul class="c-list">
+                  <li *ngFor="let col of m.collocations" class="c-list-item">
+                    <span>{{col.text}}</span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+</div>

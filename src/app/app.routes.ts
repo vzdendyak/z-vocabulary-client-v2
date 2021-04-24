@@ -5,7 +5,8 @@ import {MainComponent} from './main/main.component';
 const routes: Routes = [
   {
     path: '', component: MainComponent, children: [
-      {path: 'blocks', loadChildren: () => import('./block/block-routing.module').then((m) => m.BlockRoutingModule)}
+      {path: 'blocks', loadChildren: () => import('./block/block-routing.module').then((m) => m.BlockRoutingModule)},
+      {path: 'words', loadChildren: () => import('./word/word-routing.module').then((m) => m.WordRoutingModule)}
     ]
   }
 ];

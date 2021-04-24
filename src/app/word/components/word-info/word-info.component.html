@@ -1,0 +1,42 @@
+<div *ngIf="word" class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-4 p-4">
+        Word example
+        <i (click)="loadWord()" class="bi bi-arrow-repeat w-25 mx-2 refresh-icon"></i>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul class="m-list">
+        <li *ngFor="let m of word.meanings" class="m-list-item">
+          <app-meaning-info [meaning]="m"></app-meaning-info>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button aria-controls="addMeaningContainer" aria-expanded="false" data-target="#addMeaningContainer"
+              data-toggle="collapse">
+        <i class="bi bi-plus-circle add-icon"></i>
+      </button>
+      <div class="form-group collapse mt-2" id="addMeaningContainer">
+          <div class="row mb-2">
+            <div class="col-4">
+              <input #partOfSpeechInp class="form-control w-100"
+                     placeholder="Meaning part of speech" type="text">
+            </div>
+            <div class="col-8">
+              <input #meaningTextInp class="form-control w-100"
+                     placeholder="Meaning text" type="text">
+            </div>
+          </div>
+        <button (click)="createMeaning(partOfSpeechInp, meaningTextInp)"
+                class="btn btn-primary w-100">Add meaning
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

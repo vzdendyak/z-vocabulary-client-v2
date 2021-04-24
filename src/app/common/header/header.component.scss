@@ -12,7 +12,9 @@
     border-radius: 0;
     box-shadow: none;
     border: none;
-    background-color: $header-background;
+    //background-color: $header-background;
+    background: rgb(239, 240, 255);
+    background: linear-gradient(186deg, rgba(239, 240, 255, 1) 0%, rgba(187, 206, 224, 1) 99%);
 
     .navbar-brand {
       font-weight: bold;
@@ -56,8 +58,15 @@
     transition-duration: 0.4s;
     border-radius: 5px;
     margin-top: 5px;
+
     &:hover {
       background-color: #ceceeb;
     }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #search-field {
+    width: 30%;
   }
 }

@@ -1,9 +1,19 @@
-
 <div class="container">
-  <p>blocks-list works!</p>
-  <ul>
-    <li *ngFor="let block of data">
-      {{block.name}}
+  <button aria-controls="addBlockContainer" aria-expanded="false" data-target="#addBlockContainer"
+          data-toggle="collapse">
+    <i class="bi bi-plus-circle add-icon"></i>
+  </button>
+  <div class="form-group collapse" id="addBlockContainer">
+    <i (click)="loadData()" class="bi bi-arrow-repeat w-25 mx-2 refresh-icon"></i>
+    <input #addBlockInp (keyup.enter)="createBlock(addBlockInp.value.trim())" class="form-control w-75 d-inline"
+           id="addBlockInput"
+           placeholder="Add new" type="text">
+  </div>
+  <ul class="block-list">
+    <li *ngFor="let block of data" (click)="goToBlockDetail(block.id, block.name)"  class="block-list-item">
+      <span class="font-weight-bold">{{block.name}}</span>
+      <span class="block-words">Arrive, Work, Job</span>
+      <span class="float-right words-count">Words: {{block?.words?.length}}</span>
     </li>
   </ul>
 </div>

@@ -1,0 +1,37 @@
+
+.e-list {
+
+  padding-left: 10px;
+  border: 3px solid;
+  border-color: #0000 #0000 #0000 #ffa500;
+  //margin-left: 60px;
+}
+
+.c-list {
+  padding-left: 10px;
+  border: 3px solid;
+  border-color: #0000 #0000 #0000 blue;
+  //margin-left: 60px;
+}
+
+.edit-icon-block {
+  button {
+    background: #0000;
+    float: right;
+    padding-top: 10px;
+  }
+
+  i {
+    font-size: 15px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    float: right;
+    padding: 6px;
+  }
+}
+
+
+
+.bi-trash-fill {
+  cursor: pointer;
+}

@@ -8,6 +8,7 @@ import {BlockModule} from './block/block.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppCommonModule} from './common/common.module';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {WordModule} from './word/word.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     AppCommonModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    WordModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
